@@ -1,5 +1,5 @@
 # EinsteinLanguage
-Details on EinsteinLanguage API
+
 
 Copy Controllers and Page in sandbox
 
