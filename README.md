@@ -5,7 +5,8 @@ Copy Controllers and Page in sandbox
 
 Upload .pem file to Files tab
 
-Set Remote Site Settings (Name: PVS_API, Remote Site URL: https://api.metamind.io)
+Set Remote Site Settings (Name: PVS_API, Remote Site URL: https://api.metamind.io) and 
+(Name:EinsteinLanguage Remote Site URL: https://api.einstein.ai)
 
 Open https://c.cs85.visual.force.com/apex/PredictSentiment
 
