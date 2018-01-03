@@ -1,0 +1,23 @@
+<apex:page Controller="LanguageController" docType="html-5.0">
+  <apex:form >
+  <apex:pageBlock >
+
+      <apex:pageBlockButtons location="top">  
+          <apex:pageBlockSection >  
+              <apex:inputTextarea label="Comment or Query ?" value="{!Query}" style="width:500px; height:100px; align:left"/> 
+              <apex:commandButton value="Submit" />
+          </apex:pageBlockSection>
+          
+      </apex:pageBlockButtons>
+      
+
+      <br/><br/>
+	  <apex:pageBlockSection >
+          <apex:repeat value="{!CallLanguageUrl}" var="prediction">
+              <apex:outputText label="User Sentiment" value="{!prediction.label}" />:<apex:outputText label="Probability" value="{!prediction.probability}" /><br/><br/><br/>
+          </apex:repeat>
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+
+  </apex:form>
+</apex:page>
