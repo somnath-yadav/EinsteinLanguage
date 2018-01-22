@@ -10,6 +10,7 @@ Set Remote Site Settings (Name: PVS_API, Remote Site URL: https://api.metamind.i
 
 Open https://c.cs85.visual.force.com/apex/PredictSentiment
 
-Type comment i.e. "Thank you for the service. I am very happy.". Click Submit.
+Type comment i.e. "Thank you for policy renewal. I am very happy.". Click Submit.
 
-Sentiments (Positive, Neutral, Negative) with probabilities displayed.
+1. Sentiments (Positive, Neutral, Negative) with probabilities displayed.
+2. Intents (Billing, Order Change, Shipping) with probabilities displayed.
