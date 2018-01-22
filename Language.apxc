@@ -4,17 +4,31 @@ public class Language {
     public static String SENTIMENT = LANGUAGE_API + '/sentiment';
     public static String INTENT = LANGUAGE_API + '/intent';
     
+    
+    // Callout to Sentiment API
+    public static List<Prediction> sentiment(String document, String access_token, String model) {
+        system.debug('intent: '+ SENTIMENT);
+        system.debug('document: '+ document);
+        system.debug('access_token: '+ access_token);
+        system.debug('model: '+ model);
+        
+        return apiCall(SENTIMENT, document, access_token, model);
+        
+    }
+    
+    
+        // Callout to INTENT API
     public static List<Prediction> intent(String document, String access_token, String model) {
         system.debug('intent: '+ INTENT);
         system.debug('document: '+ document);
         system.debug('access_token: '+ access_token);
         system.debug('model: '+ model);
         
-        //return apiCall(INTENT, document, access_token, model);
-        return apiCall(SENTIMENT, document, access_token, model);
+        return apiCall(INTENT, document, access_token, model);
         
     }
     
+   // Parsing response
     private static List<Prediction> apiCall(String endpoint, String document, String access_token, String model) {
         string contentType = HttpFormBuilder.GetContentType();
 
@@ -76,7 +90,7 @@ public class Language {
          }
          return(predictions);
     }
-
+    
     public class Prediction {
         public String label {get;set;}
         public Double probability {get;set;}
