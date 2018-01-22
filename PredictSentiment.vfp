@@ -10,13 +10,23 @@
           
       </apex:pageBlockButtons>
       
+      
 
-      <br/><br/>
-	  <apex:pageBlockSection >
+            <br/>
+      <apex:pageBlockSection >
           <apex:repeat value="{!CallLanguageUrl}" var="prediction">
               <apex:outputText label="User Sentiment" value="{!prediction.label}" />:<apex:outputText label="Probability" value="{!prediction.probability}" /><br/><br/><br/>
           </apex:repeat>
       </apex:pageBlockSection>
+      
+      <br/><br/><br/>
+      <apex:pageBlockSection >
+          <apex:repeat value="{!CallLanguageUrlIntent}" var="predictionIntent">
+              <apex:outputText label="User Intent" value="{!predictionIntent.label}" />:<apex:outputText label="Probability" value="{!predictionIntent.probability}" /><br/><br/><br/>
+          </apex:repeat>
+      </apex:pageBlockSection>
+      
+
   </apex:pageBlock>
 
   </apex:form>
