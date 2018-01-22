@@ -24,18 +24,25 @@ public class LanguageController {
         String access_token = JWTBearerFlow.getAccessToken('https://api.metamind.io/v1/oauth2/token', jwt);
         return access_token;    
     }
-
+    
+	// Call to Sentiment API
     public List<Language.Prediction> getCallLanguageUrl() {
         // Get a new token
         String access_token = getAccessToken();
         system.debug('Query:'+ Query);
         // Make a prediction using URL to a file
         //return Vision.predictUrl('https://metamind.io/images/546212389.jpg',access_token,'GeneralImageClassifier');
-        //return Language.intent(Query,access_token,'KDIJEER4XD4MPTJ47HNOHIZPCM'); // To predict intent of case
-        return Language.intent(Query,access_token,'CommunitySentiment');
+        return Language.sentiment(Query,access_token,'CommunitySentiment');
     }
-
-
     
     
+    // Call to Intent API
+       public List<Language.Prediction> getCallLanguageUrlIntent() {
+        // Get a new token
+        String access_token = getAccessToken();
+        system.debug('Query:'+ Query);
+        // Make a prediction using URL to a file
+        //return Vision.predictUrl('https://metamind.io/images/546212389.jpg',access_token,'GeneralImageClassifier');
+        return Language.intent(Query,access_token,'KDIJEER4XD4MPTJ47HNOHIZPCM');
+    }
 }
